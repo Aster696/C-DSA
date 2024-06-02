@@ -70,7 +70,11 @@ public:
 
     // check number of element in stack
     void count() {
-        cout << top << endl;
+        if(isEmpty()) {
+            cout << "Stack is empty" << endl;
+        }else {
+            cout << top << endl;
+        }
     }
 
     // update element in stack
