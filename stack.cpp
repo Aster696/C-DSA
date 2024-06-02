@@ -118,7 +118,7 @@ public:
     // main menu
     void menu() {
         int option;
-        menuList()
+        menuList();
         do {
             cin >> option;
             switch (option)
