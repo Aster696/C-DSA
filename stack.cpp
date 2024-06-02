@@ -73,7 +73,7 @@ public:
         if(isEmpty()) {
             cout << "Stack is empty" << endl;
         }else {
-            cout << top << endl;
+            cout << "Total number of element in stack are: " + top + 1 << endl;
         }
     }
 
