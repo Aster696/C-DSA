@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1683557894 source:d:\workspaceses\c++-workspace\datastructures\main.cpp
+	<iostream>
+
+1682998066 source:d:\workspaceses\c++-workspace\datastructures\stack.cpp
+	"Stack.h"
+
+1682998055 d:\workspaceses\c++-workspace\datastructures\stack.h
+
