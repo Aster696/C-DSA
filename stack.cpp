@@ -69,8 +69,8 @@ public:
     }
 
     // check number of element in stack
-    int count() {
-        return top;
+    void count() {
+        cout << top << endl;
     }
 
     // update element in stack
