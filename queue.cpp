@@ -55,6 +55,7 @@ public:
             return x;
         }else {
             int x = arr[front];
+            arr[front] = 0;
             front++;
             return x;
         }
