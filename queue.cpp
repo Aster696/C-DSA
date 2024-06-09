@@ -6,7 +6,7 @@ using namespace std;
 
 class Queue {
 private:
-    int arr[4];
+    int arr[5];
     int front, rear;
 
 public:
