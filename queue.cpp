@@ -30,13 +30,14 @@ public:
     }
 
     void enqueue() {
-        int value;
-        cout << "Enter a value: ";
-        cin >> value;
         if(isFull()) {
             cout << "Queue is full" << endl;
             return;
-        }else if(front == -1 && rear == -1) {
+        }
+        int value;
+        cout << "Enter a value: ";
+        cin >> value;
+        if(front == -1 && rear == -1) {
             front = rear = 0;
         }else {
             rear++;

@@ -18,14 +18,37 @@ public:
     }
 
     bool isFull() {
-        return (rear + 1) % size(arr) ? true : false;
+        return (rear + 1) % size(arr) == front ? true : false;
     }
 
     void enqueue(){
-
+        if(isFull()) {
+            cout << "Queue is full" << endl;
+            return;
+        }
+        int value;
+        cout << "Enter a value: ";
+        cin >> value;
+        if(front == -1 && rear == -1) {
+            front, rear = 0;
+        }else {
+            rear = (rear + 1) % size(arr);
+        }
+        arr[rear] = value;
     }
 
     int dequeue() {
+        if(isEmpty()) {
+            cout << "Queue is empty" << endl;
+            return 0;
+        }else if(rear == front) {
+            arr[rear] = 0;
+            rear, front = -1;
+        }else {
+            int x = arr[front] = 0;
+            cout << "Value removed is: " << x << endl;
+            front = (front + 1) % size(arr);
+        }
         return 0;
     }
 
@@ -35,6 +58,14 @@ public:
 
     void display() {
         
+    }
+
+    int mod() {
+        int pos;
+        cout << "Enter position" << endl;
+        cin >> pos;
+        cout << "result: " << pos % size(arr) << endl;
+        return 0;
     }
 
     // menu list
@@ -85,6 +116,9 @@ public:
                 break;
             case 8:
                 system("cls");
+                break;
+            case 9:
+                mod();
                 break;
             
             default:
