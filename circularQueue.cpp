@@ -29,10 +29,10 @@ public:
         int value;
         cout << "Enter a value: ";
         cin >> value;
-        if(front == -1 && rear == -1) {
+        if(isEmpty()) {
             front, rear = 0;
         }else {
-            rear = (rear + 1) % 5;
+            rear++;
         }
         arr[rear] = value;
     }
@@ -57,7 +57,10 @@ public:
     }
 
     void display() {
-        
+        cout << "Queue value are: " << endl;
+        for(int i = 0; i < 5; i++) {
+            cout << arr[i] << endl;
+        }
     }
 
     int mod() {
