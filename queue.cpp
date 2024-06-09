@@ -12,7 +12,7 @@ private:
 public:
     Queue() {
         front = rear = -1;
-        for(int i = 0; i < 4; i++) {
+        for(int i = 0; i < 5; i++) {
             arr[i] = 0;
         }
     }
@@ -24,7 +24,7 @@ public:
     }
 
     bool isFull() {
-        if(rear == 3) 
+        if(rear == 4) 
             return true;
         return false;
     }
@@ -74,7 +74,7 @@ public:
 
     void display() {
         cout << "Queue value are: " << endl;
-        for(int i = 0; i < 4; i++) {
+        for(int i = 0; i < 5; i++) {
             cout << arr[i] << endl;
         }
     }
