@@ -2,11 +2,11 @@
 
 using namespace std;
 
-class circularQueue {
+class CircularQueue {
 private:
     int arr[5], front, rear;
 public:
-    circularQueue() {
+    CircularQueue() {
         front, rear = -1;
         for(int i = 0; i < 5; i++) {
             arr[i] = 0;
@@ -18,7 +18,7 @@ public:
     }
 
     bool isFull() {
-        return (rear + 1) % size(arr) == front ? true : false;
+        return (rear + 1) % 5 == front ? true : false;
     }
 
     void enqueue(){
@@ -32,7 +32,7 @@ public:
         if(front == -1 && rear == -1) {
             front, rear = 0;
         }else {
-            rear = (rear + 1) % size(arr);
+            rear = (rear + 1) % 5;
         }
         arr[rear] = value;
     }
@@ -47,7 +47,7 @@ public:
         }else {
             int x = arr[front] = 0;
             cout << "Value removed is: " << x << endl;
-            front = (front + 1) % size(arr);
+            front = (front + 1) % 5;
         }
         return 0;
     }
@@ -62,9 +62,9 @@ public:
 
     int mod() {
         int pos;
-        cout << "Enter position" << endl;
+        cout << "Enter position and size is: " << sizeof(arr) / sizeof(arr[0]) << endl;
         cin >> pos;
-        cout << "result: " << pos % size(arr) << endl;
+        cout << "result: " << pos % 5 << endl;
         return 0;
     }
 
@@ -130,3 +130,9 @@ public:
         
     } 
 };
+
+int main() {
+    CircularQueue circularQueue = CircularQueue();
+    circularQueue.menu();
+    return 0;
+}
