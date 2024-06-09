@@ -1,79 +1,40 @@
 #include <iostream>
-#include <string>
-
 
 using namespace std;
 
-class Queue {
+class circularQueue {
 private:
-    int arr[5];
-    int front, rear;
-
+    int arr[5], front, rear;
 public:
-    Queue() {
-        front = rear = -1;
+    circularQueue() {
+        front, rear = -1;
         for(int i = 0; i < 5; i++) {
             arr[i] = 0;
         }
     }
 
     bool isEmpty() {
-        if(front == -1 && rear == -1) 
-            return true;
-        return false;
+        return front == -1 && rear == -1 ? true : false;
     }
 
     bool isFull() {
-        if(rear == 4) 
-            return true;
-        return false;
+        return (rear + 1) % size(arr) ? true : false;
     }
 
-    void enqueue() {
-        int value;
-        cout << "Enter a value: ";
-        cin >> value;
-        if(isFull()) {
-            cout << "Queue is full" << endl;
-            return;
-        }else if(front == -1 && rear == -1) {
-            front = rear = 0;
-        }else {
-            rear++;
-        }
-        arr[rear] = value;
+    void enqueue(){
+
     }
 
     int dequeue() {
-        if(isEmpty()) {
-            cout << "Queue is empty" << endl;
-            return 0;
-        }else if(front == rear) {
-            int x = arr[front];
-            arr[front] = 0;
-            front = rear = -1;
-            return x;
-        }else {
-            int x = arr[front];
-            arr[front] = 0;
-            front++;
-            return x;
-        }
+        return 0;
     }
 
     int count() {
-        if(isEmpty()) {
-            cout << "Queue is empty" << endl;
-            return 0;
-        }
-        return (rear - front + 1);
+        return 0;
     }
 
     void display() {
-        cout << "Queue value are: " << endl;
-        for(int i = 0; i < 5; i++) {
-            cout << arr[i] << endl;
-        }
+        
     }
 
     // menu list
@@ -133,12 +94,5 @@ public:
 
         } while (option != 0);
         
-    }
-
+    } 
 };
-
-int main() {
-    Queue queue = Queue();
-    queue.menu();
-    return 0;
-}
