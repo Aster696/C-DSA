@@ -45,9 +45,6 @@ public:
     }
 
     int dequeue() {
-        int value;
-        cout << "Enter a value: ";
-        cin >> value;
         if(isEmpty()) {
             cout << "Queue is empty" << endl;
             return 0;
