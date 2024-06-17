@@ -46,7 +46,7 @@ public:
         return temp;
     }
 
-    // append node
+    // append node - Attach node at the end of the list
     void appendNode(Node *n) {
         if(nodeKeyExists(n -> key) != NULL) {
             cout << "Node already exist with key value : " << n -> key << ". Append another node with different key value." << endl;
@@ -59,7 +59,19 @@ public:
                     ptr = ptr -> next;
                 }
                 ptr -> next = n;
+                cout << "Node successfully appended" << endl;
             }
+        }
+    }
+
+    // prepend node - Attach node at the start
+    prependNode(Node *n) {
+        if(nodeKeyExists(n -> key) != NULL) {
+            cout << "Node already exist with key value : " << n -> key << ". Append another node with different key value." << endl;
+        }else {
+            n -> next = head;
+            head = n;
+            cout << "Node prepended successfully" << endl;
         }
     }
 
@@ -77,10 +89,14 @@ int main() {
     Node *n1 = new Node(1, 33);
     Node *n2 = new Node(2, 66);
     Node *n3 = new Node(3, 99);
+    Node *n0 = new Node(69, 44);
+
     SiglyLinkedList si;
     si.appendNode(n1);
     si.appendNode(n2);
     si.appendNode(n3);
+    si.displayNodeList();
+    si.prependNode(n0);
     si.displayNodeList();
     return 0;
 }
