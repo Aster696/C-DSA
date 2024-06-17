@@ -30,19 +30,39 @@ public:
         head = n;
     }
 
-    displayNodeList() {
-        head -> key = 1;
-        head -> data = 22; 
-        head -> next = NULL;
-        // SiglyLinkedList(head);
-        cout << head -> data << endl;
+    // check if node exist and return null if does not
+    Node *nodeExists(int k) {
+        Node *temp = NULL;
+        Node *ptr = head;
+
+        while(ptr != NULL) {
+            if(ptr -> key == k) {
+                temp = ptr;
+            }
+            ptr = ptr -> next;
+        }
+
+        return temp;
+    }
+
+    void displayNodeList() {
+        Node *ptr = head;
+        while(ptr != NULL) {
+            if(ptr -> next != NULL) {
+                cout << "key : " << ptr -> key << ", data : " << ptr -> data << ", next : " << ptr -> next << endl;
+                ptr = ptr -> next;
+            }
+        }
     }
 };
 
 int main() {
-    Node *node = new Node();
-    SiglyLinkedList si(node);
+    Node *n1 = new Node(1, 33);
+    Node *n2 = new Node(2, 66);
+    Node *n3 = new Node(3, 99);
+    SiglyLinkedList si(n1);
+    n1 -> next = n2;
+    n2 -> next = n3;
     si.displayNodeList();
-    delete node;
     return 0;
 }
