@@ -117,6 +117,15 @@ public:
         }
     }
 
+    // Delete node by key(unlink node from list)
+    void deleteNodeByKey(int k) {
+        Node *node = nodeKeyExists(k);
+        if(node == NULL) {
+            cout << "Key : " <<k <<" does not exist" <<endl;
+        }else {
+            
+        }
+    }
 };
 
 int main() {
