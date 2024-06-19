@@ -123,7 +123,18 @@ public:
         if(node == NULL) {
             cout << "Key : " <<k <<" does not exist" <<endl;
         }else {
-            
+            if(head -> key == k) {
+                head = head -> next;   
+            }else {
+                Node *ptr = head;
+                while(ptr -> next != NULL) {
+                    if(ptr -> next == node){
+                       ptr -> next = node -> next;
+                    }
+                    ptr = ptr -> next;
+                }
+            }
+            cout << "Node delete successfully. Key : " << k << endl;
         }
     }
 };
@@ -142,7 +153,9 @@ int main() {
     si.displayNodeList();
     si.prependNode(n0);
     si.displayNodeList();
-    si.insertNode(insertNode, 45);
+    si.insertNode(insertNode, 3);
+    si.displayNodeList();
+    si.deleteNodeByKey(3);
     si.displayNodeList();
     return 0;
 }
