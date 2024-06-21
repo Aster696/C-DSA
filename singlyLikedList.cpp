@@ -75,15 +75,6 @@ public:
         }
     }
 
-    // display node in list
-    void displayNodeList() {
-        Node *ptr = head;
-        while(ptr != NULL) {
-            cout << "key : " << ptr -> key << ", data : " << ptr -> data << ", next : " << ptr -> next << endl;
-            ptr = ptr -> next;
-        }
-    }
-
     // Insert node in between list after particular node
     void insertNode(Node *n, int k) {
         // Node *ptr = head;
@@ -148,6 +139,19 @@ public:
         }else {
             ptr -> data = data;
             cout << "Node updated successfully" << endl;
+        }
+    }
+
+    // display node in list
+    void displayNodeList() {
+        if(head == NULL){
+            cout << "Node list is empty" << endl;
+        }else {
+            Node *ptr = head;
+            while(ptr != NULL) {
+            cout << "key : " << ptr -> key << ", data : " << ptr -> data << ", next : " << ptr -> next << endl;
+            ptr = ptr -> next;
+        }
         }
     }
 
