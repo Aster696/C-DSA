@@ -130,6 +130,8 @@ public:
                 while(ptr -> next != NULL) {
                     if(ptr -> next == node){
                        ptr -> next = node -> next;
+                       delete node;
+                       break;
                     }
                     ptr = ptr -> next;
                 }
@@ -137,6 +139,18 @@ public:
             cout << "Node delete successfully. Key : " << k << endl;
         }
     }
+
+    // update node 
+    void updateNodeByKey(int k, int data) {
+        Node *ptr = nodeKeyExists(k);
+        if(ptr == NULL) {
+            cout << "Key does not exist" << endl;
+        }else {
+            ptr -> data = data;
+            cout << "Node updated successfully" << endl;
+        }
+    }
+
 };
 
 int main() {
@@ -156,6 +170,8 @@ int main() {
     si.insertNode(insertNode, 3);
     si.displayNodeList();
     si.deleteNodeByKey(3);
+    si.displayNodeList();
+    si.updateNodeByKey(2, 1223);
     si.displayNodeList();
     return 0;
 }
