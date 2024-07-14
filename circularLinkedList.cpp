@@ -26,4 +26,17 @@ class CircularLinkedList {
     CircularLinkedList(Node *n) {
         head = n;
     }
+
+    // check if node is null 
+    Node *nodeExist(int k) {
+        Node *ptr = head;
+        while(ptr !== NULL) {
+            if(prt -> key == k) {
+                break;
+            }else {
+                ptr = ptr -> next;
+            }
+        }
+        return ptr;
+    }
 };
