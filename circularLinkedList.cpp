@@ -53,11 +53,25 @@ class CircularLinkedList {
         if(nodeExist(node -> key) != NULL) {
             cout << "Node key already exist" << endl;
         }else {
-            while(ptr != NULL) {
+            while(ptr != head) {
                 ptr = ptr -> next;
             }
+            node -> next = head;
             ptr -> next = node;
             cout << "Node appended successfully" << endl;
+        }
+    }
+
+    // display node in list
+    void displayNodeList() {
+        if(head == NULL){
+            cout << "Node list is empty" << endl;
+        }else {
+            Node *ptr = head;
+            while(ptr != NULL) {
+            cout << "key : " << ptr -> key << ", data : " << ptr -> data << ", next : " << ptr -> next << endl;
+            ptr = ptr -> next;
+        }
         }
     }
 };
