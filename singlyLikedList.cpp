@@ -76,7 +76,7 @@ public:
     }
 
     // Insert node in between list after particular node
-    void insertNode(Node *n, int k) {
+    void insertNodeAfter(Node *n, int k) {
         // Node *ptr = head;
         // Node *temp = NULL;
         // if(nodeKeyExists(k) == NULL) {
@@ -155,27 +155,111 @@ public:
         }
     }
 
+    // menu list
+    void menuList() {
+        system("cls");
+        cout << "Pleaes select your option. Enter 0 for exit" << endl;
+        cout << "1. AppendNode()" << endl;
+        cout << "2. prependNode()" << endl;
+        cout << "3. insertNodeAfter()" << endl;
+        cout << "4. deleteNodeByKey()" << endl;
+        cout << "5. updateNodeByKey()" << endl;
+        cout << "6. Display()" << endl;
+        cout << "7. Menu()" << endl;
+        cout << "8. Clear screen" << endl;
+    }
+
+    void menu() {
+        menuList();
+        int option, key, data;
+        do
+        {
+            Node *n1 = new Node();
+            cout << "Enter your option: ";
+            cin >> option;
+            switch (option)
+            {
+            case 0:
+                break;
+            case 1:
+                cout << "Enter node key" << endl;
+                cin >> n1 -> key;
+                cout << "Enter node data" << endl;
+                cin >> n1 -> data;
+                appendNode(n1);
+                break;
+            case 2:
+                cout << "Enter node key" << endl;
+                cin >> n1 -> key;
+                cout << "Enter node data" << endl;
+                cin >> n1 -> data;
+                prependNode(n1);
+                break;
+            case 3:
+                cout << "Enter node key" << endl;
+                cin >> n1 -> key;
+                cout << "Enter node data" << endl;
+                cin >> n1 -> data;
+                cout << "Enter the key afterwhich you node to be inserted" << endl;
+                cin >> key;
+                insertNodeAfter(n1, k);
+                break;
+            case 4:
+                cout << "Enter the key that you want to delete" << endl;
+                cin >> key;
+                deleteNodeByKey(key);
+                break;
+            case 5:
+                cout << "Enter the key of which you want to update data" << endl;
+                cin >> key;
+                cout << "Enter the data" << endl;
+                cin >> data;
+                updateNodeByKey(key, data);
+                break;
+            case 6:
+                displayNodeList();
+                break;
+            case 7:
+                menu();
+                break;
+            case 8:
+                system("cls");
+                break;
+            default:
+                cout << "Invalid input" << endl;
+                break;
+            }
+
+        } while (option != 0);
+        
+    } 
+
+
 };
 
 int main() {
-    Node *n1 = new Node(1, 33);
-    Node *n2 = new Node(2, 66);
-    Node *n3 = new Node(3, 99);
-    Node *n0 = new Node(69, 44);
-    Node *insertNode = new Node(84, 77);
 
     SiglyLinkedList si;
-    si.appendNode(n1);
-    si.appendNode(n2);
-    si.appendNode(n3);
-    si.displayNodeList();
-    si.prependNode(n0);
-    si.displayNodeList();
-    si.insertNode(insertNode, 3);
-    si.displayNodeList();
-    si.deleteNodeByKey(3);
-    si.displayNodeList();
-    si.updateNodeByKey(2, 1223);
-    si.displayNodeList();
+    si.menu();
+
+    // Node *n1 = new Node(1, 33);
+    // Node *n2 = new Node(2, 66);
+    // Node *n3 = new Node(3, 99);
+    // Node *n0 = new Node(69, 44);
+    // Node *insertNode = new Node(84, 77);
+
+    // SiglyLinkedList si;
+    // si.appendNode(n1);
+    // si.appendNode(n2);
+    // si.appendNode(n3);
+    // si.displayNodeList();
+    // si.prependNode(n0);
+    // si.displayNodeList();
+    // si.insertNode(insertNode, 3);
+    // si.displayNodeList();
+    // si.deleteNodeByKey(3);
+    // si.displayNodeList();
+    // si.updateNodeByKey(2, 1223);
+    // si.displayNodeList();
     return 0;
 }
